@@ -10,12 +10,15 @@
     </style>
     <title>QR-Gen</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        </style>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ["Inter", "sans-serif"],
+              sans: ["VT323", "sans-serif"],
             },
           },
         },
@@ -29,10 +32,10 @@
     ></script>
     <script src="js/script.js" defer></script>
   </head>
-  <body>
-    <header class="bg-blue-500 p-4 mb-10">
+  <body class="bg-green-950 text-green-400 antialias">
+    <header class="bg-blue-800 p-4 mb-10">
       <div class="max-w-5xl m-auto">
-        <div class="text-xl font-bold text-white">Your QR Pal.</div>
+        <div class="text-2xl font-bold">Your QR Pal.</div>
       </div>
     </header>
     <main>
@@ -41,25 +44,25 @@
       >
         <div class="w-full md:w-2/3 mr-24">
           <h1 class="text-3xl font-bold mb-5 md:text-4xl">QR Code Generator</h1>
-          <p class="mb-4 text-gray-600">
+          <p class="mb-4 text-xl">
             Don't listen to your grumpy uncle! QR Codes allow smartphone users
             to access your website/information simply and quickly.
           </p>
-          <p class="mb-4 text-gray-600">
+          <p class="mb-4">
             Enter your URL below to generate a QR Code. You can download the
             image and use it anywhere you want people to have quick access to
             your website.
           </p>
-          <form id="generate-form" class="mt-4">
+          <form id="generate-form" class="mt-4 text-green-400">
             <input
               id="url"
               type="url"
               placeholder="Enter your URL..."
-              class="w-full border-2 border-gray-200 rounded p-3 text-gray-dark mr-2 focus:outline-none mb-5"
+              class="w-full border-2 border-gray-200 rounded p-3 text-xl mr-2 focus:outline-none mb-5"
             />
             <select
               id="size"
-              class="w-full border-2 border-gray-200 rounded p-3 text-gray-dark mr-2 focus:outline-none"
+              class="w-full border-2 border-gray-200 rounded p-3 text-xl mr-2 focus:outline-none"
             >
               <option value="100">100x100 (px)</option>
               <option value="200">200x200 (px)</option>
@@ -70,7 +73,7 @@
               <option value="700">700x700 (px)</option>
             </select>
             <button
-              class="bg-gray-600 rounded w-full text-white px-4 py-3 mt-5 hover:bg-black transition type-ease-out duration-300"
+              class="bg-gray-600 rounded w-full text-green-400 text-xl px-4 py-3 mt-5 hover:bg-black transition type-ease-out duration-300"
               type="submit"
             >
               Generate QR Code
@@ -80,7 +83,7 @@
 
         <div class="w-2/3 md:w-1/3 self-center">
           <img
-            src="img/qr-code.svg"
+            src="img/qrlogo-1s.gif"
             alt="logo"
             class="w-1/2 m-auto mb-10 md:w-full"
           />
