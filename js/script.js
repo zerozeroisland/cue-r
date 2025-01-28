@@ -2,32 +2,37 @@ const form = document.getElementById("generate-form");
 const qr = document.getElementById("qrcode");
 
 const onGenerateSubmit = (e) => {
-  e.preventDefault();
-
-  clearUI();
-
-  const url = document.getElementById("url").value;
-  const size = document.getElementById("size").value;
-  console.log(url, size);
-
-  if (url === "") {
-    alert("please enter a website URL");
-  } else {
+    e.preventDefault();
+  
+    clearUI();
+  
+    let url = document.getElementById("url").value.trim(); // Get the trimmed value of the URL input
+    const size = document.getElementById("size").value;
+  
+    if (url === "") {
+      alert("Please enter a website URL");
+      return;
+    }
+  
+    // Check if the URL starts with "http://" or "https://", and add "https://" if not
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+      url = `https://${url}`;
+    }
+  
+    console.log(url, size);
+  
     showSpinner();
-
+  
     setTimeout(() => {
       hideSpinner();
       generateQRCode(url, size);
-        setTimeout(() => { 
-            const saveUrl = qr.querySelector('img').src;
-            createSaveBtn(saveUrl);
-
-        }, 50);
-
-
+  
+      setTimeout(() => {
+        const saveUrl = qr.querySelector('img').src;
+        createSaveBtn(saveUrl);
+      }, 50);
     }, 2000);
-  }
-};
+  };
 
 const generateQRCode = (url, size) => {
   const qrcode = new QRCode("qrcode", {
