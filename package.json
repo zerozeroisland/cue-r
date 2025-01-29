@@ -1,0 +1,23 @@
+{
+  "name": "cue-r",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zerozeroisland/cue-r.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zerozeroisland/cue-r/issues"
+  },
+  "homepage": "https://github.com/zerozeroisland/cue-r#readme",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
